@@ -18,7 +18,7 @@ class LinkedList():
             self.head = new_node
         
     def print_list(self):
-        if self.head is None:
+        if not self.head:
             print(f"Nothing to print list is empty")
         current_node = self.head
         while current_node:
@@ -27,7 +27,7 @@ class LinkedList():
 
     def pop_element_from_list(self):
         current_node = self.head
-        if current_node is None:
+        if not current_node:
             print("Nothing to pop: Linked list is empty")
         elif current_node.next is None:
             self.head = None
@@ -43,7 +43,7 @@ class LinkedList():
             del current_node
 
     def delete_node(self, value):
-        if self.head is None:
+        if not self.head:
             print(f"Nothing to delete Linked list is empty")
             return
 
@@ -88,11 +88,11 @@ linked_list.insert_node(12)
 # linked_list.print_list()
 # linked_list.delete_node(12)
 # linked_list.print_list()
-# linked_list.delete_node(3)
+linked_list.delete_node(3)
 # linked_list.print_list()
-# linked_list.delete_node(6)
+linked_list.delete_node(6)
 # linked_list.print_list()
-# linked_list.delete_node(9)
+linked_list.delete_node(9)
 # linked_list.print_list()
 linked_list.delete_node(12)
 linked_list.print_list()
