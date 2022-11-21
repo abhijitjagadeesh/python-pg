@@ -18,6 +18,8 @@ class LinkedList():
             self.head = new_node
         
     def print_list(self):
+        if self.head is None:
+            print(f"Nothing to print list is empty")
         current_node = self.head
         while current_node:
             print(current_node.value)
@@ -40,23 +42,59 @@ class LinkedList():
             print(f"Popped {current_node.value} from the linked list")
             del current_node
 
+    def delete_node(self, value):
+        if self.head is None:
+            print(f"Nothing to delete Linked list is empty")
+            return
+
+        current_node = self.head
+        if current_node.value == value:
+            print(f"Deleting {value} from linked list")
+            self.head = current_node.next
+            del current_node
+            return 
+        
+        while current_node.next is not None:
+            previous_node = current_node
+            current_node = current_node.next
+            next_node = current_node.next
+            if current_node.value == value:
+                previous_node.next = next_node
+                print(f"Deleting {value} from linked list")
+                del current_node
+                break
+
+
+
+
             
 
 
 linked_list = LinkedList()
+# linked_list.insert_node(3)
+# linked_list.insert_node(6)
+# linked_list.insert_node(9)
+# linked_list.insert_node(12)
+# linked_list.pop_element_from_list()
+# linked_list.pop_element_from_list()
+# linked_list.pop_element_from_list()
+# linked_list.pop_element_from_list()
+# linked_list.pop_element_from_list()
+# linked_list.print_list()
 linked_list.insert_node(3)
 linked_list.insert_node(6)
 linked_list.insert_node(9)
 linked_list.insert_node(12)
 # linked_list.print_list()
-linked_list.pop_element_from_list()
-linked_list.pop_element_from_list()
-linked_list.pop_element_from_list()
-linked_list.pop_element_from_list()
-linked_list.pop_element_from_list()
+# linked_list.delete_node(12)
+# linked_list.print_list()
+# linked_list.delete_node(3)
+# linked_list.print_list()
+# linked_list.delete_node(6)
+# linked_list.print_list()
+# linked_list.delete_node(9)
+# linked_list.print_list()
+linked_list.delete_node(12)
 linked_list.print_list()
-linked_list.insert_node(3)
-linked_list.insert_node(6)
-linked_list.insert_node(9)
-linked_list.insert_node(12)
-linked_list.print_list()
+# linked_list.delete_node(12)
+# linked_list.print_list()
